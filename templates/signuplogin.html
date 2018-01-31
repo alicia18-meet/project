@@ -18,11 +18,15 @@
       <a href="/projects" class="w3-bar-item w3-button">Projects</a>
       <a href="/galleries" class="w3-bar-item w3-button">Galleries</a>
       <a href="/staff" class="w3-bar-item w3-button">Staff</a>
-      <a href="/signuplogin" class="w3-bar-item w3-button">Sign Up / Login</a>
+      <a href="/signup" class="w3-bar-item w3-button">Sign Up / Login</a>
     </div>
   </div>
 </div>
 <style>
+
+
+body {font-family: Arial;}
+* {box-sizing: border-box}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -56,52 +60,41 @@ button {
     opacity: 0.9;
 }
 
+button:hover {
+    opacity:1;
 }
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
+/* Extra styles for the login button */
+.loginbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float login and signup buttons and add an equal width */
+.loginbtn, .signupbtn {
   float: left;
-  width: 50%;
-}
 
-/* Add padding to container elements */
-.container {
-    padding: 16px;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-
+  width: 100%;
 }
 </style>
 <body>
-
-<form action="/signup" method="post" style="border:1px solid #ccc">
-  <div class="container">
   <br>
-    <p style="font-size: 20pt;"><b>Join the Designspiration™ fam!</b></p>
-    <p>Please fill in this form to create an account.</p>
+  <br><br>
+    <p style="margin-left: 20px;font-size: 30pt;"><b>Log In to your Designspiration™ Account!</b></p>
+    <p style="margin-left: 20px;font-size: 20pt;">If you don't have an account yet, no worries, sign up and join the family!</p>
     <hr>
 
-    <label><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    
-
-    
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
     <div class="clearfix">
-     
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="button" class="loginbtn"> <p style="font-size: 20pt;">Log In</p></button>
+      <form action="/signup" method="get">
+      <button type="submit" id="signupb" class="signupbtn"><p style="font-size: 20pt;">Sign Up</p></button></form>
     </div>
-  </div>
-</form>
+  <br><br><br><br><br><br><br><br><br><br><br>
+  <h3 class="w3-border-bottom w3-border-grey w3-padding-16"></h3>
 
+<!--   <script type="text/javascript">
+       document.getElementById("signupb");
+  </script>
+ -->
 </body>
-</html>
+

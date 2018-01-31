@@ -35,6 +35,14 @@ def galleries():
 def staff():
 	return render_template('staff.html')
 
+@app.route("/terms")
+def terms():
+	return render_template('terms.html')
+
+@app.route("/signuplogin")
+def signuplogin():
+	return render_template('signuplogin.html')
+
 @app.route("/signup", methods= ["GET","POST"])
 def signup():
 	if request.method=="GET":
