@@ -3,16 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/desi.db'
 db = SQLAlchemy(app)
 
 class User(db.Model):
     __tablename__ = "user"
     id= db.Column(db.Integer,primary_key=True)
-    email = db.Column(db.String)
-    password = db.Column(db.String)
-    def __init__(self,email,psw):
-    	self.email=email
+    name = db.Column(db.String)
+    psw = db.Column(db.String)
+    def __init__(self,name,psw):
+    	self.name=name
     	self.psw=psw
 
 db.create_all()
@@ -43,17 +43,35 @@ def terms():
 def signuplogin():
 	return render_template('signuplogin.html')
 
+@app.route("/afternologin")
+def afternologin():
+	return render_template('afternologin.html')
+
 @app.route("/signup", methods= ["GET","POST"])
 def signup():
 	if request.method=="GET":
 		return render_template('signup.html')
 	else:
-		email = request.form['email']
+		name = request.form['name']
 		psw = request.form['psw']
-		x=User(email,psw)
+		x=User(name=name,psw=psw)
 		db.session.add(x)
 		db.session.commit()
 		return render_template('aftersignup.html')
+
+@app.route("/login", methods= ["GET","POST"])
+def login():
+	if request.method=="POST":
+		user = User.query.filter_by(name=request.form['name']).first()
+		if user==None:
+			return render_template('afternologin.html')
+		else:
+			return render_template('home.html', xx=user)
+	else:
+		return render_template('login.html')
+
+
+
 
 
 

@@ -12,7 +12,7 @@
 <!-- navigation bar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a ><b>DESIGNSPIRATION</b> get inspired</a>
+    <a style="font-size: 15pt"><b>DESIGNSPIRATION</b> get inspired</a>
    
 
     <div class="w3-right w3-hide-small">
@@ -28,8 +28,18 @@
 <!-- header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img class="w3-image" src="{{url_for('static', filename='jackson.jpg')}}" width="1500" height="760">
+
+
+  {% if xx %}
+    <div><h2 style="top: 70px;left: 30%; position: absolute;" class="w3-xxlarge w3-text-white"><b class="w3-padding w3-black w3-opacity-min">Welcome back {{xx.name}}!</b></h2></div>
+  {% endif %}
+
+
+
+
+
   <div class="w3-display-middle w3-margin-top w3-center">
-    <h2 class="w3-xxxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DESIGNSPIRATION</b></span> </h2>
+    <h2 class="w3-xxxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DESIGNSPIRATION</b></span></h2>
   </div>
 </header>
 

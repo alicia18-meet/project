@@ -24,8 +24,6 @@
 </div>
 <style>
 
-
-
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -58,44 +56,49 @@ button {
     opacity: 0.9;
 }
 
-button:hover {
-    opacity:1;
 }
 
-/* Extra styles for the login button */
-.loginbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-}
-
-/* Float login and signup buttons and add an equal width */
-.loginbtn, .signupbtn {
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
   float: left;
+  width: 50%;
+}
 
-  width: 100%;
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+
 }
 </style>
 <body>
+
+<form action="/login" method="post" style="border:1px solid #ccc">
+  <div class="container">
   <br>
-  <br><br>
-    <p style="margin-left: 20px;font-size: 30pt;"><b>Log In to your Designspiration™ Account!</b></p>
-    <p style="margin-left: 20px;font-size: 15pt;" class="w3-opacity">If you don't have an account yet, no worries, sign up and join the family!</p>
+    <p style="font-size: 20pt;"><b>Wellcome back to Designspiration™!</b></p>
+    <p>Please fill in this form to log in to your account.</p>
     <hr>
 
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="name" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    
+
     <div class="clearfix">
-        <form action="/login" method="get">
-      <button type="submit" id="loginb" class="loginbtn"> <p style="font-size: 20pt;">Log In</p></button></form>
-      
-
-      <form action="/signup" method="get">
-      <button type="submit" id="signupb" class="signupbtn"><p style="font-size: 20pt;">Sign Up</p></button></form>
+     
+      <button type="submit" class="signupbtn">Log in</button>
     </div>
-  <br><br><br><br><br><br><br><br><br><br><br>
-  <h3 class="w3-border-bottom w3-border-grey w3-padding-16"></h3>
+  </div>
+</form>
 
-<!--   <script type="text/javascript">
-       document.getElementById("signupb");
-  </script>
- -->
 </body>
-
+</html>
